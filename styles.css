@@ -12,7 +12,35 @@
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
-    background: #1e1e20;
+    background: #363647;
+}
+
+.email-image {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background-color: var(--text-input-field);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.email-image img {
+    width: 80px;
+}
+
+.resend {
+    font-size: var(--sm);
+}
+
+.resend span {
+    color: var(--very-light-pink);
+}
+
+.resend a {
+    color: var(--hospital-green);
+    text-decoration: none;
 }
 
 .login {
@@ -20,6 +48,13 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;
+}
+
+.form-containerEmail {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+    justify-items: center;
 }
 
 .form-container {
@@ -41,6 +76,12 @@ body {
     text-align: center;
 }
 
+.account {
+    font-size: var(--lg);
+    margin-bottom: 36px;
+    text-align: start;
+}
+
 .subtitle {
     color: var(--very-light-pink);
     font-size: var(--md);
@@ -57,6 +98,54 @@ body {
     margin-bottom: 4px;
 }
 
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 26px;
+    place-content: center;
+}
+
+.product-card {
+    width: 240px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.product-info div p:nth-child(2) {
+    font-weight: bold;
+    font-size: var(--sm);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--very-light-pink);
+}
+
+.product-info figure {
+    margin: 0px;
+}
+
+.product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+.product-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+}
+
 input {
     background-color: var(--text-input-field);
     border: none;
@@ -65,6 +154,14 @@ input {
     font-size: var(--md);
     padding: 6px;
     margin-bottom: 12px;
+}
+
+.input-nameAccount .input-emailAccount .input-passwordAccount {
+    margin-bottom: 22px;
+}
+
+.input-email {
+    margin-bottom: 20px;
 }
 
 .primary-button {
@@ -79,7 +176,20 @@ input {
     height: 50px;
 }
 
-form {
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form a {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 52px;
+}
+
+.form div {
     display: flex;
     flex-direction: column;
 }
@@ -89,8 +199,52 @@ form {
     margin-top: 14px;
 }
 
+.value {
+    color: var(--very-light-pink);
+    font-size: var(--md);
+    margin: 8px 0 32pc 0;
+}
+
+.secondary-button {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+
+@media (max-width: 640px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, 140px);
+    }
+    .product-card {
+        width: 140px;
+    }
+    .product-card img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
 @media (max-width: 640px) {
     .logo {
         display: block;
+    }
+    .secondary-button {
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 24px;
+    }
+    .form-container {
+        height: 100%;
+    }
+    .form {
+        height: 100%;
+        justify-content: space-between;
     }
 }
